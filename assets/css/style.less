@@ -128,10 +128,10 @@ main {
 
 .in-theaters {
     background-color: black;
-    background-image: url(../img/background/background1.jpg);
+    background-image: url(../img/background/background2.jpg);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     padding: 3em 0;
 
     h1 {
@@ -236,25 +236,10 @@ main {
             -webkit-box-orient: vertical;
         }
 
-        .mini-text {
+        .genre {
             text-overflow: ellipsis;
             white-space: nowrap;
             overflow: hidden;
-        }
-    }
-
-    &.detail {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 2em;
-        
-        .poster {
-            flex: 1;
-            min-width: 150px;
-        }
-
-        .content {
-            flex: 4;
         }
     }
 }
@@ -449,6 +434,8 @@ footer {
         }
 
         .box-body {
+            outline: 1px solid var(--border-color);
+
             .theater {
                 outline: 1px solid var(--border-color);
                 height: 500px;
@@ -470,7 +457,7 @@ footer {
                         background-color: var(--light-pink-color);
                     }
 
-                    & + a {
+                    &+a {
                         border-top: 1px solid var(--border-color);
                     }
                 }
@@ -568,11 +555,11 @@ footer {
 
                     &.active {
                         border: 1px solid var(--primary-color);
-                        
+
                         span {
                             color: var(--primary-color);
                         }
-                        
+
                         h4 {
                             background-color: var(--primary-color);
                             color: var(--white-color);
@@ -590,12 +577,12 @@ footer {
                     gap: 1em;
                     padding: .75em 0;
 
-                    & + .movie-card {
+                    &+.movie-card {
                         border-top: 1px solid var(--border-color);
                     }
-                    
+
                     .poster {
-                        flex: 1;    
+                        flex: 1;
                     }
 
                     .content {
@@ -604,11 +591,39 @@ footer {
                         .title {
                             color: var(--dark-color);
                         }
+                    }
+                }
+            }
 
-                        .times {
-                            display: flex;
-                            gap: 1em;
-                            flex-wrap: wrap;
+            .showtimes-cinema {
+                .address {
+                    display: flex;
+                    align-items: center;
+                    gap: 1em;
+
+                    .left {
+                        padding: .25em;
+                        border: 1px solid var(--border-color);
+                        border-radius: 7px;
+
+                        img {
+                            width: 2em;
+                        }
+                    }
+
+                    .right {
+                        h4 {
+                            font-size: var(--font-small);
+                            margin: 0;
+                        }
+
+                        span {
+                            font-size: var(--font-smaller);
+
+                            a {
+                                margin-left: 1em;
+                                font-weight: 600;
+                            }
                         }
                     }
                 }
@@ -630,4 +645,15 @@ footer {
 .account-form {
     padding: 3em 0;
     background-color: var(--light-pink-color);
+}
+
+.single-movie {
+    background-color: black;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url(../img/background/background1.jpg);
+    background-blend-mode: lighten;
+    padding: 3em 0;
+    position: relative;
 }
