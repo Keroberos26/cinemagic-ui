@@ -88,7 +88,7 @@ var swiper = new Swiper(".showtimes .box-body .swiper", {
     })
 })()
 
-document.getElementById('confirm').addEventListener('input', function() {
+document.getElementById('confirm').addEventListener('input', function () {
     var pass = document.getElementById('password').value;
     if (this.value !== pass) {
         this.classList.add('is-invalid');

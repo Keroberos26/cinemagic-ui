@@ -657,3 +657,47 @@ footer {
     padding: 3em 0;
     position: relative;
 }
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 300px;
+    background-color: var(--dark-color);
+    color: var(--white-color);
+    transition: width 0.25s;
+
+    &.show {
+        width: 0;
+    }
+
+    nav {
+        li > a {
+            display: block;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+    }
+
+    hr {
+        border-top: 1px solid rgba(255,255,255,.85);
+    }
+}
+
+.main-content {
+    margin-left: 300px;
+    transition: margin 0.25s;
+
+    &.show {
+        margin-left: 0;
+    }
+
+    .header {
+        display: flex;
+        align-items: center;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+        height: 60px;
+        padding: 0 1em;
+    }
+}
