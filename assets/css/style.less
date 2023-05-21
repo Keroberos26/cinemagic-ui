@@ -667,13 +667,26 @@ footer {
     background-color: var(--dark-color);
     color: var(--white-color);
     transition: width 0.25s;
+    overflow: hidden;
+
+    img {
+        transition: width 0.25s;
+    }
 
     &.show {
-        width: 0;
+        width: 60px;
+
+        img {
+            width: 30px;
+        }
+    }
+
+    .container-fluid {
+        width: 300px;
     }
 
     nav {
-        li > a {
+        li>a {
             display: block;
             font-weight: 600;
             white-space: nowrap;
@@ -681,7 +694,7 @@ footer {
     }
 
     hr {
-        border-top: 1px solid rgba(255,255,255,.85);
+        border-top: 1px solid rgba(255, 255, 255, .85);
     }
 }
 
@@ -690,7 +703,7 @@ footer {
     transition: margin 0.25s;
 
     &.show {
-        margin-left: 0;
+        margin-left: 60px;
     }
 
     .header {
@@ -699,5 +712,39 @@ footer {
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
         height: 60px;
         padding: 0 1em;
+    }
+}
+
+.ticketing-steps {
+    padding: 0.75em 0;
+    background-color: var(--dark-color);
+
+    .col+.col {
+        > div {
+            color: var(--white-color);
+            position: relative;
+
+            &::before {
+                content: "";
+                position: absolute;
+                width: 30px;
+                height: 30px;
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='32' height='32'%3E%3Cpath d='M13.1714 12.0007L8.22168 7.05093L9.63589 5.63672L15.9999 12.0007L9.63589 18.3646L8.22168 16.9504L13.1714 12.0007Z' fill='rgba(255,255,255,1)'%3E%3C/path%3E%3C/svg%3E");
+                left: 0;
+                top: 50%;
+                transform: translate(-100%, -50%);
+            }
+        }
+        
+    }
+}
+
+.seat-form {
+    padding: 3em 0;
+
+    .ticket-info {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+        border-radius: 7px;
+        overflow: hidden;
     }
 }
